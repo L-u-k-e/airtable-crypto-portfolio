@@ -1,22 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { base } from "../../lib/node/airtable";
+import { base, tables } from "../../lib/node/airtable";
 import { cmk } from "../../lib/node/cmk";
 import { coinGecko } from "../../lib/node/coingecko";
 const { pipe, map, uniq, flatten, filter } = require("ramda");
-
-const tables = {
-  currentPortfolio: {
-    table: "1.21.22",
-    view: "Raw Data",
-    fields: {
-      priceSyncCheckbox: "Sync Price",
-      cmkSymbol: "CMK Symbol",
-      tokenPrice: "Token Price",
-      tokenPriceTimestamp: "Price Timestamp",
-      coinGeckoId: "CoinGecko ID",
-    },
-  },
-};
 
 export default async function updateTokenPrices(req, res) {
   const { fields, view, table } = tables.currentPortfolio;
