@@ -1,4 +1,5 @@
 import Head from "next/head";
+import currency from "currency.js";
 import { base, tables } from "../lib/node/airtable";
 const { reduceBy, sort, descend, map } = require("ramda");
 
@@ -21,11 +22,12 @@ export async function getServerSideProps() {
   return {
     props: {
       percentages,
+      values: tokenValues,
     },
   };
 }
 
-export default function PortfolioAllocation({ percentages }) {
+export default function PortfolioAllocation({ percentages, values }) {
   const tokensSortedByPercentDesc = sort(
     descend((token) => percentages[token])
   )(Object.keys(percentages));
@@ -37,17 +39,19 @@ export default function PortfolioAllocation({ percentages }) {
       </Head>
 
       <main>
-        <table>
+        <table cellSpacing={15}>
           <thead>
             <tr>
               <th>Token&emsp;</th>
-              <th>Percent</th>
+              <th>Value (USD)</th>
+              <th>Percent (USD)</th>
             </tr>
           </thead>
           <tbody>
             {tokensSortedByPercentDesc.map((token) => (
               <tr key={token}>
                 <td>{token}&emsp;</td>
+                <td>{`${currency(values[token]).format(true)}`}</td>
                 <td>{percentages[token].toFixed(1)}</td>
               </tr>
             ))}
