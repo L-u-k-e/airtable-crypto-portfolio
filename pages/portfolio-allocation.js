@@ -18,7 +18,6 @@ export async function getServerSideProps() {
   const percentages = map((tokenSum) => (tokenSum / totalValue) * 100)(
     tokenValues
   );
-  console.log(percentages);
   return {
     props: {
       percentages,
