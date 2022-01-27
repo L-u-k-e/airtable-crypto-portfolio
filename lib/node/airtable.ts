@@ -24,6 +24,7 @@ export const tables = {
       priceSyncCheckbox: "Sync Price",
       cmkSymbol: "CMK Symbol",
       tokenPrice: "Token Price",
+      tokenGroup: "Token Group",
       tokenPriceTimestamp: "Price Timestamp",
       coinGeckoId: "CoinGecko ID",
     },
