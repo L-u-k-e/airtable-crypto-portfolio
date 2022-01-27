@@ -44,7 +44,7 @@ export default function PortfolioAllocation({ percentages, values }) {
             <tr>
               <th>Token&emsp;</th>
               <th>Value (USD)</th>
-              <th>Percent (USD)</th>
+              <th>Percent</th>
             </tr>
           </thead>
           <tbody>
