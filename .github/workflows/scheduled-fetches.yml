@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: cURL request
         # Hit the webhook endpoint to rebuild  from the "main" branch
-        run: curl -X POST -d {} airtable-crypto-portfolio.vercel.app/api/update-token-prices
+        run: curl -X GET airtable-crypto-portfolio.vercel.app/api/update-token-prices
