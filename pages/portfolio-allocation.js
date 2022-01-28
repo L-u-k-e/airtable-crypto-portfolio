@@ -39,6 +39,12 @@ export default function PortfolioAllocation({ percentages, values }) {
       </Head>
 
       <main>
+        <a
+          style={{ color: "blue", textDecoration: "underline", margin: 15 }}
+          href="https://airtable.com/app7aGG2CqYq8oS62/tblozF5PZFhQe9Pyw/viwUo0LC12jGarQAv?blocks=hide"
+        >
+          Airtable Base
+        </a>
         <table cellSpacing={15}>
           <thead>
             <tr>
