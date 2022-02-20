@@ -2,8 +2,8 @@ name: Trigger Price Fetch on a CRON Schedule
 
 on:
   schedule:
-    # Runs "at minutes 10 past every hour"
-    - cron: "*/10 * * * *"
+    # Runs "at 4:20 am"
+    - cron: "20 4 * * *"
 jobs:
   build:
     name: Trigger Price Refetch
